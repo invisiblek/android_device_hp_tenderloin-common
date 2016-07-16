@@ -24,7 +24,7 @@ PRODUCT_COPY_FILES += \
     device/hp/tenderloin-common/prebuilt/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     device/hp/tenderloin-common/prebuilt/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf  \
     device/hp/tenderloin-common/prebuilt/lvm/lvm.conf:root/lvm/lvm.conf \
-    device/hp/tenderloin-common/prebuilt/boot/moboot.splash.Evervolv.tga:moboot.splash.Evervolv.tga \
+    device/hp/tenderloin-common/prebuilt/boot/moboot.splash.CyanogenMod.tga:moboot.splash.CyanogenMod.tga \
     device/hp/tenderloin-common/prebuilt/tptoolbox.cfg:tptoolbox.cfg \
     device/hp/tenderloin-common/prebuilt/boot/moboot.default:moboot.default
 

@@ -113,7 +113,7 @@ BOARD_USES_UBOOT_MULTIIMAGE := true
 BOARD_USES_CUSTOM_FSCK_MSDOS := true
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/htc/msm8960
+TARGET_KERNEL_SOURCE := kernel/hp/tenderloin
 KERNEL_WIFI_MODULES:
 	$(MAKE) -C external/backports-wireless defconfig-ath6kl
 	export CROSS_COMPILE=$(KERNEL_TOOLCHAIN)/$(KERNEL_TOOLCHAIN_PREFIX); $(MAKE) -C external/backports-wireless KLIB=$(KERNEL_SRC) KLIB_BUILD=$(KERNEL_OUT) ARCH=$(TARGET_ARCH) $(ARM_CROSS_COMPILE)
