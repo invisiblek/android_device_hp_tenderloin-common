@@ -119,27 +119,6 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
   device_specific.FullOTA_InstallBegin()
 
-  if (OPTIONS.motd != None):
-    eachRawMotd = OPTIONS.motd.split("\\n")
-    for eachMotd in eachRawMotd:
-      rawMotd = eachMotd.split()
-      sizedMotd = []
-      for word in rawMotd:
-        sizedMotd += [word[i:i+OPTIONS.motdLim] for i in range(0, len(word), OPTIONS.motdLim)]
-      sizedMotd.reverse()
-      if len(sizedMotd):
-        motdLine = [sizedMotd.pop()]
-      else:
-        motdLine = [""]
-      sizedMotd.reverse()
-      for word in sizedMotd:
-        if ( (motdLine[len(motdLine)-1].__len__() + word.__len__()) < 48):
-          motdLine[len(motdLine)-1] = motdLine[len(motdLine)-1] + " " + word
-        else:
-          motdLine.append(word)
-      for line in motdLine:
-        script.Print(line)
-
   CopyInstallTools(output_zip)
   script.UnpackPackageDir("install", "/tmp/install")
   script.SetPermissionsRecursive("/tmp/install", 0, 0, 0755, 0644, None, None)
@@ -169,7 +148,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     # image.  This has the effect of writing new data from the package
     # to the entire partition, but lets us reuse the updater code that
     # writes incrementals to do it.
-    script.Print("Installing Evervolv")
+    script.Print("Installing CyanogenMod")
     system_tgt = GetImage("system", OPTIONS.input_tmp, OPTIONS.info_dict)
     system_tgt.ResetFileMap()
     system_diff = common.BlockDifference("system", system_tgt, src=None)
@@ -180,7 +159,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.Mount("/system", recovery_mount_options)
     #if not has_recovery_patch:
     #  script.UnpackPackageDir("recovery", "/system")
-    script.Print("Installing Evervolv")
+    script.Print("Installing CyanogenMod")
     script.UnpackPackageDir("system", "/system")
     symlinks = CopyPartitionFiles(system_items, input_zip, output_zip)
     script.Print("Creating symlinks")
@@ -242,25 +221,25 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   boot_img.close()
 
   script.Mount("/boot")
-  script.UnpackPackageFile("boot.img", "/boot/uImage.Evervolv")
+  script.UnpackPackageFile("boot.img", "/boot/uImage.CyanogenMod")
 
   tptoolbox_cfg = open(OPTIONS.device_out + "/tptoolbox.cfg")
   common.ZipWriteStr(output_zip, "tptoolbox.cfg", tptoolbox_cfg.read())
   tptoolbox_cfg.close()
 
-  moboot_tga = open(OPTIONS.device_out + "/moboot.splash.Evervolv.tga")
-  common.ZipWriteStr(output_zip, "moboot.splash.Evervolv.tga", moboot_tga.read())
+  moboot_tga = open(OPTIONS.device_out + "/moboot.splash.CyanogenMod.tga")
+  common.ZipWriteStr(output_zip, "moboot.splash.CyanogenMod.tga", moboot_tga.read())
   moboot_tga.close()
 
   moboot_default = open(OPTIONS.device_out + "/moboot.default")
   common.ZipWriteStr(output_zip, "moboot.default", moboot_default.read())
   moboot_default.close()
 
-  script.UnpackPackageFile("moboot.splash.Evervolv.tga", "/boot/moboot.splash.Evervolv.tga")
+  script.UnpackPackageFile("moboot.splash.CyanogenMod.tga", "/boot/moboot.splash.CyanogenMod.tga")
   script.UnpackPackageFile("moboot.default", "/boot/moboot.default")
 
   # Delete other uImage traces.
-  um = ["/boot/uImage.CyanogenMod", "/boot/moboot.splash.CyanogenMod.tga", "/boot/uImage.ICS",
+  um = ["/boot/uImage.Evervolv", "/boot/moboot.splash.Evervolv.tga", "/boot/uImage.ICS",
   "/boot/moboot.splash.ICS.tga", "/boot/uImage.AOKP", "/boot/moboot.splash.AOKP.tga",
   "/boot/uImage.Classicnerd", "/boot/moboot.splash.Classicnerd"]
   script.DeleteFiles(um)

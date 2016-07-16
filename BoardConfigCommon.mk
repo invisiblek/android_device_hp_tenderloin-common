@@ -82,7 +82,7 @@ BOARD_KERNEL_BASE := 0x40200000
 BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom
 BOARD_KERNEL_IMAGE_NAME := uImage
 BOARD_PAGE_SIZE := 2048
-TARGET_KERNEL_SOURCE := kernel/htc/msm8960
+TARGET_KERNEL_SOURCE := kernel/hp/tenderloin
 ifndef RECOVERY_BUILD
 TARGET_KERNEL_NO_MODULES := true
 endif
