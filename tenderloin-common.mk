@@ -191,3 +191,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dexopt-flags=m=y \
     dalvik.vm.dex2oat-flags=--no-watch-dog \
     dalvik.vm.image-dex2oat-filter=speed
+
+# Gello
+PRODUCT_PACKAGES += \
+    Gello
