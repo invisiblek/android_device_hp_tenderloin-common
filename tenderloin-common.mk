@@ -165,7 +165,8 @@ PRODUCT_PACKAGES += \
     dosfsck \
     serial \
     com.android.future.usb.accessory \
-    rebootcmd
+    rebootcmd \
+    mkbootimg
 
 # Wifi
 PRODUCT_PACKAGES += \
