@@ -170,8 +170,3 @@ endif
 
 # Multiboot stuff
 TARGET_RECOVERY_PRE_COMMAND := "/system/bin/rebootcmd"
-
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-        device/hp/tenderloin-common/sepolicy
-
