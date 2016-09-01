@@ -137,7 +137,6 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    dhcpcd.conf \
     hostapd \
     hostapd_default.conf \
     libnetcmdiface \
