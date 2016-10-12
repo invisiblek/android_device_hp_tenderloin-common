@@ -95,6 +95,9 @@ endif
 BOARD_NEEDS_CUTILS_LOG := true
 BOARD_USES_ALT_KMSG_LOCATION := "/proc/last_klog"
 
+# Malloc
+MALLOC_SVELTE := true
+
 # Media
 TARGET_NO_ADAPTIVE_PLAYBACK := true
 
