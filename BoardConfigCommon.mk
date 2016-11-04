@@ -90,7 +90,6 @@ TARGET_KERNEL_SOURCE := kernel/hp/tenderloin
 ifndef RECOVERY_BUILD
 TARGET_KERNEL_NO_MODULES := true
 endif
-ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
 
 # Logging
 BOARD_NEEDS_CUTILS_LOG := true
