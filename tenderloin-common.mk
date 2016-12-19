@@ -148,10 +148,6 @@ PRODUCT_PACKAGES += \
     libwifi-hal-ath6kl \
     wpa_supplicant.conf
 
-PRODUCT_COPY_FILES += \
-    device/hp/tenderloin-common/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    device/hp/tenderloin-common/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
-
 # Gello
 PRODUCT_PACKAGES += \
     Gello
