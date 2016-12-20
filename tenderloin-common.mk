@@ -145,6 +145,7 @@ PRODUCT_PACKAGES += \
     libnetcmdiface \
     libwpa_client \
     wpa_supplicant \
+    libwifi-hal-ath6kl \
     wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
