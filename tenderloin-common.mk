@@ -93,7 +93,7 @@ PRODUCT_PACKAGES += \
 # Prebuilts
 PRODUCT_COPY_FILES += \
     device/hp/tenderloin-common/prebuilt/tptoolbox.cfg:tptoolbox.cfg \
-    device/hp/tenderloin-common/prebuilt/boot/moboot.splash.CyanogenMod.tga:moboot.splash.CyanogenMod.tga \
+    device/hp/tenderloin-common/prebuilt/boot/moboot.splash.LineageOS.tga:moboot.splash.LineageOS.tga \
     device/hp/tenderloin-common/prebuilt/boot/moboot.default:moboot.default \
     device/hp/tenderloin-common/prebuilt/lvm/lvm.conf:root/lvm/lvm.conf \
 

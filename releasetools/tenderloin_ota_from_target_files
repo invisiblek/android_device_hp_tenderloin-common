@@ -148,7 +148,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     # image.  This has the effect of writing new data from the package
     # to the entire partition, but lets us reuse the updater code that
     # writes incrementals to do it.
-    script.Print("Installing CyanogenMod")
+    script.Print("Installing LineageOS")
     system_tgt = GetImage("system", OPTIONS.input_tmp, OPTIONS.info_dict)
     system_tgt.ResetFileMap()
     system_diff = common.BlockDifference("system", system_tgt, src=None)
@@ -159,7 +159,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.Mount("/system", recovery_mount_options)
     #if not has_recovery_patch:
     #  script.UnpackPackageDir("recovery", "/system")
-    script.Print("Installing CyanogenMod")
+    script.Print("Installing LineageOS")
     script.UnpackPackageDir("system", "/system")
     symlinks = CopyPartitionFiles(system_items, input_zip, output_zip)
     script.Print("Creating symlinks")
@@ -221,27 +221,28 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   boot_img.close()
 
   script.Mount("/boot")
-  script.UnpackPackageFile("boot.img", "/boot/uImage.CyanogenMod")
+  script.UnpackPackageFile("boot.img", "/boot/uImage.LineageOS")
 
   tptoolbox_cfg = open(OPTIONS.device_out + "/tptoolbox.cfg")
   common.ZipWriteStr(output_zip, "tptoolbox.cfg", tptoolbox_cfg.read())
   tptoolbox_cfg.close()
 
-  moboot_tga = open(OPTIONS.device_out + "/moboot.splash.CyanogenMod.tga")
-  common.ZipWriteStr(output_zip, "moboot.splash.CyanogenMod.tga", moboot_tga.read())
+  moboot_tga = open(OPTIONS.device_out + "/moboot.splash.LineageOS.tga")
+  common.ZipWriteStr(output_zip, "moboot.splash.LineageOS.tga", moboot_tga.read())
   moboot_tga.close()
 
   moboot_default = open(OPTIONS.device_out + "/moboot.default")
   common.ZipWriteStr(output_zip, "moboot.default", moboot_default.read())
   moboot_default.close()
 
-  script.UnpackPackageFile("moboot.splash.CyanogenMod.tga", "/boot/moboot.splash.CyanogenMod.tga")
+  script.UnpackPackageFile("moboot.splash.LineageOS.tga", "/boot/moboot.splash.LineageOS.tga")
   script.UnpackPackageFile("moboot.default", "/boot/moboot.default")
 
   # Delete other uImage traces.
   um = ["/boot/uImage.Evervolv", "/boot/moboot.splash.Evervolv.tga", "/boot/uImage.ICS",
   "/boot/moboot.splash.ICS.tga", "/boot/uImage.AOKP", "/boot/moboot.splash.AOKP.tga",
-  "/boot/uImage.Classicnerd", "/boot/moboot.splash.Classicnerd"]
+  "/boot/uImage.Classicnerd", "/boot/moboot.splash.Classicnerd", "/boot/uImage.CyanogenMod",
+  "/boot/moboot.splash.CyanogenMod.tga"]
   script.DeleteFiles(um)
 
   ######## tenderloin build change done ########
