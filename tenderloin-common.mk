@@ -151,7 +151,3 @@ PRODUCT_PACKAGES += \
 # Gello
 PRODUCT_PACKAGES += \
     Gello
-
-# Storage
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.sdcardfs=true
