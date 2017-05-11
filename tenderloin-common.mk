@@ -147,7 +147,3 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     libwifi-hal-ath6kl \
     wpa_supplicant.conf
-
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
