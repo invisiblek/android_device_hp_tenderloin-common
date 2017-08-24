@@ -24,6 +24,8 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
+   android.hardware.audio@2.0-impl \
+   android.hardware.audio.effect@2.0-impl \
    audio.a2dp.default \
    audio.primary.tenderloin \
    audio.r_submix.default \
@@ -51,6 +53,10 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.memtrack@1.0-impl \
     copybit.msm8660 \
     gralloc.msm8660 \
     hwcomposer.msm8660 \
@@ -78,6 +84,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-impl \
     lights.tenderloin
 
 # Low-RAM optimizations
@@ -125,6 +132,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl \
     power.tenderloin
 
 # Recovery
@@ -161,6 +169,10 @@ PRODUCT_PACKAGES += \
     ts_srv_set \
     rebootcmd \
     mkbootimg
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
 
 # Wifi
 PRODUCT_PACKAGES += \

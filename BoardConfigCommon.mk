@@ -76,6 +76,7 @@ TARGET_DISPLAY_INSECURE_MM_HEAP := true
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 TARGET_NO_INITLOGO := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
 
 # Dosfsck from dosfstools
 BOARD_USES_CUSTOM_FSCK_MSDOS := true
@@ -83,6 +84,9 @@ BOARD_USES_CUSTOM_FSCK_MSDOS := true
 # GPS
 BOARD_USES_QCOM_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
+
+# HIDL
+DEVICE_MANIFEST_FILE := device/hp/tenderloin-common/configs/manifest.xml
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/hp/tenderloin-common/uboot-bootimg.mk
