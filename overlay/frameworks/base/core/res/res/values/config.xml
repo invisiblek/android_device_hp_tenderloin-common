@@ -166,7 +166,7 @@
     <integer name="config_lowMemoryKillerMinFreeKbytesAbsolute">122880</integer>
 
     <!-- Support in Surfaceflinger for blur layers.
-         NOTE: This requires additional hardware-specific code. -->
-    <bool name="config_uiBlurEnabled">true</bool>
+         NOTE: This requires additional hardware-specific code. >
+    <bool name="config_uiBlurEnabled">true</bool-->
 
 </resources>
